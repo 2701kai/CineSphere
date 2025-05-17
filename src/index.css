@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 @import "tailwindcss";
 @import "tailwindcss/preflight" @tailwind utilities;
 @plugin "daisyui" {
@@ -5,7 +6,6 @@
 }
 
 /* Custom Font  */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 
 body {
   @apply bg-gray-100 text-gray-800 font-sans;
