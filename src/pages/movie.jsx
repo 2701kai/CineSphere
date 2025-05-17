@@ -39,37 +39,41 @@ export default function Movie() {
     return <div className="text-center mt-10">Film nicht gefunden...</div>;
 
   return (
-    <div className="p-6">
-      <div className="card bg-base-100 shadow-xl">
-        <figure>
-          <img
-            src={movie.img_backdrop}
-            alt="Backdrop"
-            className="cursor-pointer"
-            onClick={() => setModalImg(movie.img_backdrop)}
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            {movie.title}
-            <div className="badge badge-secondary">{movie.year}</div>
-          </h2>
+    <div className="p-16 flex justify-center items-center h-75vh rounded-box">
+      <div className="card shadow-xl h-full flex flex-col justify-between p-4">
+        <div className="carousel rounded-box flex flex-col md:flex-row justify-center items-center md:items-start h-100 gap-4 mb-4">
+          <div className="carousel-item">
+            <img
+              src={movie.img_backdrop}
+              alt="Backdrop"
+              className="cursor-pointer object-cover rounded-box w-100 h-100"
+              onClick={() => setModalImg(movie.img_backdrop)}
+            />
+          </div>
+          <div className="carousel-item ">
+            <img
+              src={movie.img}
+              alt="Poster"
+              className="cursor-pointer object-cover rounded-box w-100 h-100"
+              onClick={() => setModalImg(movie.img)}
+            />
+          </div>
+        </div>
 
-          {/* ★★★★★ Rating */}
+        <div className="card-body">
+          <h1 className="card-title text-5xl font-bold">
+            {movie.title}
+            <div className="badge badge-secondary badge-lg text-xl">
+              {movie.year}
+            </div>
+          </h1>
+
           <Rating id={movie.id} type="movie" />
 
-          <p className="text-gray-500 text-sm">{movie.genres?.join(", ")}</p>
+          <p className="text-gray-500 ">{movie.genres?.join(", ")}</p>
           <p>{movie.overview}</p>
 
-          <div className="card-actions justify-start items-center gap-4">
-            {movie.img && (
-              <img
-                src={movie.img}
-                alt="Poster"
-                className="w-24 rounded cursor-pointer"
-                onClick={() => setModalImg(movie.img)}
-              />
-            )}
+          <div className="card-actions justify-start items-center gap-4 mt-8">
             <WatchButton isWatched={isWatched} onToggle={toggleWatch} />
           </div>
         </div>

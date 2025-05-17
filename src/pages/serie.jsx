@@ -43,37 +43,42 @@ export default function Serie() {
     return <div className="text-center mt-10">Serie nicht gefunden...</div>;
 
   return (
-    <div className="p-6">
-      <div className="card bg-base-100 shadow-xl">
-        <figure>
-          <img
-            src={serie.img_backdrop}
-            alt="Backdrop"
-            className="cursor-pointer"
-            onClick={() => setModalImg(serie.img_backdrop)}
-          />
-        </figure>
+    <div className="p-16 flex justify-center items-center h-75vh rounded-box">
+      <div className="card shadow-xl h-full flex flex-col justify-between p-4">
+        <div className="carousel rounded-box flex flex-col md:flex-row justify-center items-center md:items-start h-100 gap-4 mb-4 ">
+          <div className="carousel-item">
+            <img
+              src={serie.img_backdrop}
+              alt="Backdrop"
+              className="cursor-pointer object-cover rounded-box w-100 h-100 "
+              onClick={() => setModalImg(serie.img_backdrop)}
+            />
+          </div>
+          <div className="carousel-item ">
+            <img
+              src={serie.img}
+              alt="Poster"
+              className="cursor-pointer object-cover rounded-box w-100 h-100 "
+              onClick={() => setModalImg(serie.img)}
+            />
+          </div>
+        </div>
+
         <div className="card-body">
-          <h2 className="card-title">
+          <h1 className="card-title text-5xl font-bold">
             {serie.title}
-            <div className="badge badge-secondary">{serie.year}</div>
-          </h2>
+            <div className="badge badge-secondary badge-lg text-xl">
+              {serie.year}
+            </div>
+          </h1>
 
           {/* Rating bileşeni */}
           <Rating id={serie.id} type="series" />
 
-          <p className="text-gray-500 text-sm">{serie.genres?.join(", ")}</p>
+          <p className="text-gray-500 ">{serie.genres?.join(", ")}</p>
           <p>{serie.overview}</p>
 
-          <div className="card-actions justify-start items-center gap-4">
-            {serie.img && (
-              <img
-                src={serie.img}
-                alt="Poster"
-                className="w-24 rounded cursor-pointer"
-                onClick={() => setModalImg(serie.img)}
-              />
-            )}
+          <div className="card-actions justify-start items-center gap-4 mt-8">
             <WatchButton isWatched={isWatched} onToggle={toggleWatch} />
           </div>
         </div>
