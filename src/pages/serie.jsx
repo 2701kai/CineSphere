@@ -58,7 +58,10 @@ export default function Serie() {
             {serie.title}
             <div className="badge badge-secondary">{serie.year}</div>
           </h2>
+
+          {/* Rating bileşeni */}
           <Rating id={serie.id} type="series" />
+
           <p className="text-gray-500 text-sm">{serie.genres?.join(", ")}</p>
           <p>{serie.overview}</p>
 

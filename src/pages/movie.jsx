@@ -17,7 +17,6 @@ export default function Movie() {
         const data = await getMovieById(Number(id));
         setMovie(data);
 
-        // watchlist durumu kontrol
         const watchedIds = getAllMovieIds();
         setIsWatched(watchedIds.includes(Number(id)));
       } catch (error) {
@@ -55,7 +54,10 @@ export default function Movie() {
             {movie.title}
             <div className="badge badge-secondary">{movie.year}</div>
           </h2>
-          <Rating id={movie.id} type="movies" />
+
+          {/* ★★★★★ Rating */}
+          <Rating id={movie.id} type="movie" />
+
           <p className="text-gray-500 text-sm">{movie.genres?.join(", ")}</p>
           <p>{movie.overview}</p>
 
