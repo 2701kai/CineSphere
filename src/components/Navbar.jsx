@@ -37,17 +37,17 @@ export default function Navbar() {
           } md:static md:bg-transparent md:shadow-none md:rounded-none md:p-0 md:z-auto`}
         >
           <li>
-            <Link to="/movies" className="btn btn-sm btn-ghost">
+            <Link to="/movies" className="btn">
               Movies
             </Link>
           </li>
           <li>
-            <Link to="/series" className="btn btn-sm btn-ghost">
+            <Link to="/series" className="btn">
               Series
             </Link>
           </li>
           <li>
-            <Link to="/watchlist" className="btn btn-sm btn-ghost">
+            <Link to="/watchlist" className="btn">
               Watchlist
             </Link>
           </li>
