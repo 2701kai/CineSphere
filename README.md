@@ -1,107 +1,122 @@
-<a name="top"></a>
+# CineSphere 🎬
 
-# Gruppenprojekt-SPA
+_One Planet. Infinite Stories._
 
-# API Service Dokumentation (`src/services/api.js`)
-
-## Filme (Movies)
-
-- **getMovies(page)**
-
-  > Holt eine Liste populärer Filme von der TMDB API.  
-  > **Parameter:** `page` (optional, Standard: 1) – Seitenzahl der Ergebnisse.  
-  > **Rückgabe:** Array von Film-Objekten.
-
-- **getMovieById(id)**
-  > Holt einen Film mit der angegebenen ID zuerst aus dem localStorage, falls vorhanden, sonst von der API.
-  > **Parameter:** `id` – Die Film-ID.  
-  > **Rückgabe:** Film-Objekt.
-
-## für Watchlist
-
-- **saveMovieById(id)**
-
-  > Holt einen Film mit der angegebenen ID von der API und speichert ihn im localStorage, falls noch nicht vorhanden.  
-  > **Parameter:** `id` – Die Film-ID.  
-  > **Rückgabe:** `true` wenn gespeichert, sonst `false`.
-
-- **removeMovieById(id)**
-
-  > Entfernt einen Film mit der angegebenen ID aus dem localStorage.  
-  > **Parameter:** `id` – Die Film-ID.
-
-- **getAllMoviesLocal()**
-
-  > Gibt alle lokal gespeicherten Filme als Array zurück.
+> Curated by us. Streamed for all.
 
 ---
 
-[Nach oben](#top)
-
-## Serien (Series)
-
-- **getPopSeries(page)**
-
-  > Holt eine Liste populärer Serien von der TMDB API.  
-  > **Parameter:** `page` (optional, Standard: 1) – Seitenzahl der Ergebnisse.  
-  > **Rückgabe:** Array von Serien-Objekten.
-
-- **getSeriesById(id)**
-
-  > Holt eine Serie mit der angegebenen ID zuerst aus dem localStorage, falls vorhanden, sonst von der API.  
-  > **Parameter:** `id` – Die Serien-ID.  
-  > **Rückgabe:** Serien-Objekt.
-
-## für Watchlist
-
-- **saveSeriesById(id)**
-
-  > Holt eine Serie mit der angegebenen ID von der API und speichert sie im localStorage, falls noch nicht vorhanden.  
-  > **Parameter:** `id` – Die Serien-ID.  
-  > **Rückgabe:** `true` wenn gespeichert, sonst `false`.
-
-- **removeSeriesById(id)**
-
-  > Entfernt eine Serie mit der angegebenen ID aus dem localStorage.  
-  > **Parameter:** `id` – Die Serien-ID.
-
-- **getAllSeriesLocal()**
-
-  > Gibt alle lokal gespeicherten Serien als Array zurück.
+#### _Brought to life by the one and only Team Multi Kulti – a symphony of creative minds coding toward clarity, connection, and cultural cohesion._
 
 ---
 
-[Nach oben](#top)
+## 🧠 Overview
 
-## 📦 Localstorage Service Dokumentation `src/services/localstorage.js`
+**CineSphere** is a vibrant single-page streaming interface built with the **MERN-like stack** (React + Tailwind + mock REST API). It celebrates the joy of clean design, fluid routing, and collaborative codecraft.
 
-- **getAllMovieIds()**
+### 🔧 Features:
 
-  > Gibt ein Array von IDs aller Filme aus localStorage zurück, um zu prüfen, ob der Film in der Watchlist ist.
-
-- **getAllSeriesIds()**
-  > Gibt ein Array von IDs aller Serien aus localStorage zurück, um zu prüfen, ob die Serie in der Watchlist steht.
+- Dynamic routing with React Router
+- Tailwind + DaisyUI for responsive, modern design
+- Local login system using `json-server`
+- LocalStorage for state persistence
+- Seamless Vercel deployment 🌐
 
 ---
 
-## Bewertung (Rating) Service Dokumentation (`src/services/rating.js`)
+## 🚀 Getting Started
 
-- **setMovieStar(id, rating)**
+### 1. Clone the repo
 
-  > Setzt die Bewertung (Sterne) für einen Film mit der angegebenen ID.  
-  > Aktualisiert auch das gespeicherte Filmobjekt im localStorage, falls vorhanden.  
-  > **Parameter:**
-  >
-  > - `id`: Die Film-ID
-  > - `rating`: Die Anzahl der Sterne (z.B. 1–5)
+```bash
+git clone https://github.com/2701kai/CineSphere.git
+cd CineSphere
+npm install
+```
 
-- **setSerieStar(id, rating)**
+### 2. Start the mock backend
 
-  > Setzt die Bewertung (Sterne) für eine Serie mit der angegebenen ID.  
-  > Aktualisiert auch das gespeicherte Serienobjekt im localStorage, falls vorhanden.  
-  > **Parameter:**
-  >
-  > - `id`: Die Serien-ID
-  > - `rating`: Die Anzahl der Sterne (z.B. 1–5)
+```bash
+json-server --watch db.json --port 3000
+```
 
-[Nach oben](#top)
+> _(Install json-server globally if needed)_
+
+```bash
+npm install -g json-server
+```
+
+### 3. Launch frontend
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔐 Login Credentials
+
+Use this dev login to explore the app:
+
+- **Username:** `tmk`
+- **Password:** `go`
+
+You'll be redirected to the movies section after login.
+
+---
+
+## 🧩 Auth Logic
+
+- App checks `http://localhost:3000/users` and stores session data in `localStorage`
+- Conditional rendering of navbar login/logout
+- Future versions will include route protection (e.g. `/watchlist` gated by login)
+
+---
+
+## 📦 Deployment
+
+Live version hosted on [Vercel](https://vercel.com/).  
+Build triggered from the `main` branch using `vite build`.
+
+---
+
+## 🤝 Credits
+
+A true team effort. Special kudos to:
+
+- @payermann for robust routing magic ✨
+- @amir.h.a for architectural insights 🧠
+- All contributors for navigating the ups and downs with grit, wit, and trust.
+
+---
+
+## 📖 Extended Documentation
+
+🗂️ Explore our full documentation:
+
+- [`HOW_WE_STARTED: Felix initial README.md`](./docs/HOW_WE_STARTED.md)
+- [`crossPlatform.md`](./docs/crossPlatform.md)
+- [`final-fix-gspa-deploy.md`](./docs/final-fix-gspa-deploy.md)
+- [`fix-gspa-fork-guide.md`](./docs/fix-gspa-fork-guide.md)
+- [`story-of-the-project.md`](./docs/story-of-the-project.md)
+
+---
+
+## TL;DR 🧃
+
+_CineSphere was born from a storm and forged by collaboration._  
+A client request for a streaming upgrade turned into a beautiful showcase of what a motivated, multicultural dev team can achieve in just a week.  
+We not only delivered — we grew as devs and humans.
+
+---
+
+## 📚 Read More
+
+Check out the full background story in [`docs/story-of-the-project.md`](./docs/story-of-the-project.md)  
+It’s part recap, part satire, all heart.
+
+---
+
+## Like what you see? Be a part of it and prosper with us.
+
+# Join us at [DCI](https://digitalcareerinstitute.org/?dci_friends_promotion_source=survey&dci_friends_promotion_medium=student-satisfaction&dci_friends_promotion_campaign=end-of-course&dci_friends_promotion_content=blank&dci_friends_promotion_term=blank) 🚀!
