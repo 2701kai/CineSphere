@@ -6,7 +6,7 @@ One Planet. Infinite Stories.
 
 ---
 
-#### _Props to the phenomenal @team-multi-kulti for navigating the entire journey — from the ephemeral bliss of .jsx heaven to the yawning abyss of profound crisis — without ever succumbing, thanks to the spirit that defines us as a team._
+#### _Props to the phenomenal @team-multi-kulti for navigating the entire journey - from the ephemeral bliss of .jsx heaven to the yawning abyss of profound crisis - without ever succumbing, thanks to the spirit that defines us as a team._
 
 ---
 
