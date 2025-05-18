@@ -43,13 +43,14 @@ export default function Login() {
         onSubmit={handleLogin}
         className="card bg-base-100 shadow-xl p-8 w-full max-w-sm"
       >
-        <h2 className="text-xl font-bold mb-4 text-center">Login</h2>
+        <h2 className="text-xl font-bold mb-4 text-center text-white">Login</h2>
 
         <label className="form-control mb-2">
           <input
             type="text"
             placeholder="Username"
             className="input input-bordered"
+            style={{ color: "white" }}
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
@@ -60,6 +61,7 @@ export default function Login() {
           <input
             type="password"
             placeholder="Password"
+            style={{ color: "white" }}
             className="input input-bordered"
             value={password}
             onChange={(e) => setPassword(e.target.value)}

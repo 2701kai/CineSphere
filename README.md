@@ -84,6 +84,7 @@ Build triggered from the `main` branch using `vite build`.
 
 A true team effort. Special kudos to:
 
+- @2701kai our main fire 🔥
 - @payermann for robust routing magic ✨
 - @amir.h.a for architectural insights 🧠
 - All contributors for navigating the ups and downs with grit, wit, and trust.
@@ -94,11 +95,10 @@ A true team effort. Special kudos to:
 
 🗂️ Explore our full documentation:
 
-- [`HOW_WE_STARTED: Felix initial README.md`](./docs/HOW_WE_STARTED.md)
-- [`crossPlatform.md`](./docs/crossPlatform.md)
-- [`final-fix-gspa-deploy.md`](./docs/final-fix-gspa-deploy.md)
-- [`fix-gspa-fork-guide.md`](./docs/fix-gspa-fork-guide.md)
-- [`story-of-the-project.md`](./docs/story-of-the-project.md)
+- [`HOW_WE_STARTED: Felix initial README.md`](./felix_initial_README.md)
+- [`crossPlatform.md`](./doc/cross-platform/crossPlatform.md)
+- [`final-fix-gspa-deploy.md`](./doc/gh-issues-kai/final-fix-gspa-deploy.md)
+- [`fix-gspa-fork-guide.md`](./doc/gh-issues-kai/fix-gspa-fork-guide.md)
 
 ---
 
@@ -112,7 +112,7 @@ We not only delivered — we grew as devs and humans.
 
 ## 📚 Read More
 
-Check out the full background story in [`docs/story-of-the-project.md`](./docs/story-of-the-project.md)  
+Check out the full background story in [`docs/story-of-the-project.md`](./doc/story-of-the-project.md)  
 It’s part recap, part satire, all heart.
 
 ---
