@@ -18,6 +18,14 @@ export default function Login() {
 
       if (users.length > 0) {
         localStorage.setItem("user", JSON.stringify(users[0]));
+
+        // 🥳 CONFETTI BURST!
+        confetti({
+          particleCount: 150,
+          spread: 90,
+          origin: { y: 0.6 },
+        });
+
         navigate("/movies");
       } else {
         setError("Invalid credentials");
