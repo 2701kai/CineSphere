@@ -18,6 +18,7 @@ import Watchlist from "./pages/watchlist";
 import Movie from "./pages/movie";
 import Serie from "./pages/serie";
 import ObjPage from "./pages/ObjPage";
+import Login from "./pages/Login";
 
 import "./index.css";
 
@@ -40,6 +41,7 @@ function Layout() {
           <Route path="/series/:id" element={<Serie />} />
           <Route path="/watchlist" element={<Watchlist />} />
           <Route path="/testobj" element={<ObjPage />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </div>
       <Footer />

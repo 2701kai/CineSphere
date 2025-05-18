@@ -1,9 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-// import logo from "../assets/logo-cinesphere.png";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    setIsLoggedIn(!!user);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("user");
+    setIsLoggedIn(false);
+    navigate("/");
+  };
 
   return (
     <header className="bg-base-200 shadow-md sticky top-0 z-50">
@@ -51,6 +63,20 @@ export default function Navbar() {
               Watchlist
             </Link>
           </li>
+          {!isLoggedIn && (
+            <li>
+              <Link to="/login" className="btn">
+                Login
+              </Link>
+            </li>
+          )}
+          {isLoggedIn && (
+            <li>
+              <button onClick={handleLogout} className="btn btn-outline">
+                Logout
+              </button>
+            </li>
+          )}
         </ul>
       </div>
     </header>
