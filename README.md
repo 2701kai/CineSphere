@@ -84,10 +84,10 @@ Build triggered from the `main` branch using `vite build`.
 
 A true team effort. Special kudos to:
 
-- @2701kai our main fire 🔥
 - @payermann for robust routing magic ✨
 - @amir.h.a for architectural insights 🧠
 - All contributors for navigating the ups and downs with grit, wit, and trust.
+- @2701kai - well, he made an effort. As he does. So.. thanx for V.i.S.d.P., i guess.
 
 ---
 
