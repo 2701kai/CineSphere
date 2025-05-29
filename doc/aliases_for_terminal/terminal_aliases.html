@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>terminal_aliases.md</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+
+    <style>
+      /* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+      /*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+      body {
+        font-family: var(
+          --vscode-markdown-font-family,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe WPC",
+          "Segoe UI",
+          "Ubuntu",
+          "Droid Sans",
+          sans-serif
+        );
+        font-size: var(--vscode-markdown-font-size, 14px);
+        padding: 0 26px;
+        line-height: var(--vscode-markdown-line-height, 22px);
+        word-wrap: break-word;
+      }
+
+      #code-csp-warning {
+        position: fixed;
+        top: 0;
+        right: 0;
+        color: white;
+        margin: 16px;
+        text-align: center;
+        font-size: 12px;
+        font-family: sans-serif;
+        background-color: #444444;
+        cursor: pointer;
+        padding: 6px;
+        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+      }
+
+      #code-csp-warning:hover {
+        text-decoration: none;
+        background-color: #007acc;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+      }
+
+      body.scrollBeyondLastLine {
+        margin-bottom: calc(100vh - 22px);
+      }
+
+      body.showEditorSelection .code-line {
+        position: relative;
+      }
+
+      body.showEditorSelection .code-active-line:before,
+      body.showEditorSelection .code-line:hover:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: -12px;
+        height: 100%;
+      }
+
+      body.showEditorSelection li.code-active-line:before,
+      body.showEditorSelection li.code-line:hover:before {
+        left: -30px;
+      }
+
+      .vscode-light.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(0, 0, 0, 0.15);
+      }
+
+      .vscode-light.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(0, 0, 0, 0.4);
+      }
+
+      .vscode-light.showEditorSelection .code-line .code-line:hover:before {
+        border-left: none;
+      }
+
+      .vscode-dark.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(255, 255, 255, 0.4);
+      }
+
+      .vscode-dark.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(255, 255, 255, 0.6);
+      }
+
+      .vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+        border-left: none;
+      }
+
+      .vscode-high-contrast.showEditorSelection .code-active-line:before {
+        border-left: 3px solid rgba(255, 160, 0, 0.7);
+      }
+
+      .vscode-high-contrast.showEditorSelection .code-line:hover:before {
+        border-left: 3px solid rgba(255, 160, 0, 1);
+      }
+
+      .vscode-high-contrast.showEditorSelection
+        .code-line
+        .code-line:hover:before {
+        border-left: none;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      a:focus,
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: 1px solid -webkit-focus-ring-color;
+        outline-offset: -1px;
+      }
+
+      hr {
+        border: 0;
+        height: 2px;
+        border-bottom: 2px solid;
+      }
+
+      h1 {
+        padding-bottom: 0.3em;
+        line-height: 1.2;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-weight: normal;
+      }
+
+      table {
+        border-collapse: collapse;
+      }
+
+      table > thead > tr > th {
+        text-align: left;
+        border-bottom: 1px solid;
+      }
+
+      table > thead > tr > th,
+      table > thead > tr > td,
+      table > tbody > tr > th,
+      table > tbody > tr > td {
+        padding: 5px 10px;
+      }
+
+      table > tbody > tr + tr > td {
+        border-top: 1px solid;
+      }
+
+      blockquote {
+        margin: 0 7px 0 5px;
+        padding: 0 16px 0 10px;
+        border-left-width: 5px;
+        border-left-style: solid;
+      }
+
+      code {
+        font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New",
+          monospace, "Droid Sans Fallback";
+        font-size: 1em;
+        line-height: 1.357em;
+      }
+
+      body.wordWrap pre {
+        white-space: pre-wrap;
+      }
+
+      pre:not(.hljs),
+      pre.hljs code > div {
+        padding: 16px;
+        border-radius: 3px;
+        overflow: auto;
+      }
+
+      pre code {
+        color: var(--vscode-editor-foreground);
+        tab-size: 4;
+      }
+
+      /** Theming */
+
+      .vscode-light pre {
+        background-color: rgba(220, 220, 220, 0.4);
+      }
+
+      .vscode-dark pre {
+        background-color: rgba(10, 10, 10, 0.4);
+      }
+
+      .vscode-high-contrast pre {
+        background-color: rgb(0, 0, 0);
+      }
+
+      .vscode-high-contrast h1 {
+        border-color: rgb(0, 0, 0);
+      }
+
+      .vscode-light table > thead > tr > th {
+        border-color: rgba(0, 0, 0, 0.69);
+      }
+
+      .vscode-dark table > thead > tr > th {
+        border-color: rgba(255, 255, 255, 0.69);
+      }
+
+      .vscode-light h1,
+      .vscode-light hr,
+      .vscode-light table > tbody > tr + tr > td {
+        border-color: rgba(0, 0, 0, 0.18);
+      }
+
+      .vscode-dark h1,
+      .vscode-dark hr,
+      .vscode-dark table > tbody > tr + tr > td {
+        border-color: rgba(255, 255, 255, 0.18);
+      }
+    </style>
+
+    <style>
+      /*
+ * Visual Studio 2015 dark style
+ * Author: Nicolas LLOBERA <nllobera@gmail.com>
+ */
+
+      .hljs {
+        display: block;
+        overflow-x: auto;
+        padding: 0.5em;
+        background: #1e1e1e;
+        color: #dcdcdc;
+      }
+
+      .hljs-keyword,
+      .hljs-literal,
+      .hljs-symbol,
+      .hljs-name {
+        color: #569cd6;
+      }
+      .hljs-link {
+        color: #569cd6;
+        text-decoration: underline;
+      }
+
+      .hljs-built_in,
+      .hljs-type {
+        color: #4ec9b0;
+      }
+
+      .hljs-number,
+      .hljs-class {
+        color: #b8d7a3;
+      }
+
+      .hljs-string,
+      .hljs-meta-string {
+        color: #d69d85;
+      }
+
+      .hljs-regexp,
+      .hljs-template-tag {
+        color: #9a5334;
+      }
+
+      .hljs-subst,
+      .hljs-function,
+      .hljs-title,
+      .hljs-params,
+      .hljs-formula {
+        color: #dcdcdc;
+      }
+
+      .hljs-comment,
+      .hljs-quote {
+        color: #57a64a;
+        font-style: italic;
+      }
+
+      .hljs-doctag {
+        color: #608b4e;
+      }
+
+      .hljs-meta,
+      .hljs-meta-keyword,
+      .hljs-tag {
+        color: #9b9b9b;
+      }
+
+      .hljs-variable,
+      .hljs-template-variable {
+        color: #bd63c5;
+      }
+
+      .hljs-attr,
+      .hljs-attribute,
+      .hljs-builtin-name {
+        color: #9cdcfe;
+      }
+
+      .hljs-section {
+        color: gold;
+      }
+
+      .hljs-emphasis {
+        font-style: italic;
+      }
+
+      .hljs-strong {
+        font-weight: bold;
+      }
+
+      /*.hljs-code {
+  font-family:'Monospace';
+}*/
+
+      .hljs-bullet,
+      .hljs-selector-tag,
+      .hljs-selector-id,
+      .hljs-selector-class,
+      .hljs-selector-attr,
+      .hljs-selector-pseudo {
+        color: #d7ba7d;
+      }
+
+      .hljs-addition {
+        background-color: #144212;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .hljs-deletion {
+        background-color: #600;
+        display: inline-block;
+        width: 100%;
+      }
+    </style>
+
+    <style>
+      /*
+ * Markdown PDF CSS
+ */
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI",
+          "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+        padding: 0 12px;
+      }
+
+      pre {
+        background-color: #f8f8f8;
+        border: 1px solid #cccccc;
+        border-radius: 3px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+      }
+
+      pre:not(.hljs) {
+        padding: 23px;
+        line-height: 19px;
+      }
+
+      blockquote {
+        background: rgba(127, 127, 127, 0.1);
+        border-color: rgba(0, 122, 204, 0.5);
+      }
+
+      .emoji {
+        height: 1.4em;
+      }
+
+      code {
+        font-size: 14px;
+        line-height: 19px;
+      }
+
+      /* for inline code */
+      :not(pre):not(.hljs) > code {
+        color: #c9ae75; /* Change the old color so it seems less like an error */
+        font-size: inherit;
+      }
+
+      /* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+      .page {
+        page-break-after: always;
+      }
+    </style>
+
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+  </head>
+  <body>
+    <script>
+      mermaid.initialize({
+        startOnLoad: true,
+        theme:
+          document.body.classList.contains("vscode-dark") ||
+          document.body.classList.contains("vscode-high-contrast")
+            ? "dark"
+            : "default",
+      });
+    </script>
+    <h1 id="%F0%9F%A7%A0-speed-up-gh-workflow-with-aliases">
+      🧠 Speed Up GH Workflow With Aliases
+    </h1>
+    <blockquote>
+      <p><em>at least I´m trying to..</em></p>
+    </blockquote>
+    <p><img src="image.png" alt="alt text" /></p>
+    <h4 id="sudo-nano-bashrc--source-bashrc">
+      <code>sudo nano ~/.bashrc &amp;&amp; source ~/.bashrc</code>
+    </h4>
+    <pre
+      class="hljs"
+    ><code><div><span class="hljs-comment"># =================================================================================</span>
+<span class="hljs-comment">#       ALIASES</span>
+<span class="hljs-comment"># =================================================================================</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># WRAP: Push current branch, switch to main, merge it, push main | Alt + W</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">wrap_merge_to_main</span></span>() {
+    current_branch=$(git symbolic-ref --short HEAD)
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$current_branch</span>"</span> = <span class="hljs-string">"main"</span> ]; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"You're already on 'main'. Cannot wrap from main to main."</span>
+        <span class="hljs-built_in">return</span> 1
+    <span class="hljs-keyword">fi</span>
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"🔁 Pushing current branch '<span class="hljs-variable">$current_branch</span>'..."</span>
+    git push || <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"🔀 Switching to 'main'..."</span>
+    git checkout main || <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"🔁 Merging '<span class="hljs-variable">$current_branch</span>' into 'main'..."</span>
+    git merge <span class="hljs-string">"<span class="hljs-variable">$current_branch</span>"</span> || <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"🚀 Pushing 'main' to origin..."</span>
+    git push || <span class="hljs-built_in">return</span> 1
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"✅ Done! '<span class="hljs-variable">$current_branch</span>' has been merged into 'main' and pushed."</span>
+}
+<span class="hljs-built_in">bind</span> -x <span class="hljs-string">'"\ew":wrap_merge_to_main'</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># GAC: Alt+G = Pre-fill commit message | Alt + G</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">git_add_commit_prefill</span></span>() {
+    READLINE_LINE=<span class="hljs-string">"git add . &amp;&amp; git commit -m ''"</span>
+    READLINE_POINT=28
+}
+<span class="hljs-built_in">bind</span> -x <span class="hljs-string">'"\eg":git_add_commit_prefill'</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># GAC: Typed command `gac`</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">gac</span></span>() {
+    git add .
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Enter commit message:"</span>
+    <span class="hljs-built_in">read</span> -r msg
+    git commit -m <span class="hljs-string">"<span class="hljs-variable">$msg</span>"</span>
+}
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># GACP: Alt+V or type `gacp`| Alt + V</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">gacp</span></span>() {
+    <span class="hljs-built_in">read</span> -e -p <span class="hljs-string">"Commit message: "</span> msg &amp;&amp; git add . &amp;&amp; git commit -m <span class="hljs-string">"<span class="hljs-variable">$msg</span>"</span> &amp;&amp; git push
+}
+<span class="hljs-built_in">bind</span> -x <span class="hljs-string">'"\ev":gacp'</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># Git alias - git push - `gp`</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-built_in">alias</span> gp=<span class="hljs-string">'git push'</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># GCMM: Merge current branch into `main` | # removed Alt + M</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">gcmm</span></span>() {
+    current_branch=$(git symbolic-ref --short HEAD)
+
+    <span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$current_branch</span>"</span> = <span class="hljs-string">"main"</span> ]; <span class="hljs-keyword">then</span>
+        <span class="hljs-built_in">echo</span> <span class="hljs-string">"You're already on 'main'. Cannot merge 'main' into itself."</span>
+        <span class="hljs-built_in">return</span> 1
+    <span class="hljs-keyword">fi</span>
+
+    <span class="hljs-built_in">echo</span> <span class="hljs-string">"Merging '<span class="hljs-variable">$current_branch</span>' into 'main'..."</span>
+    git checkout main &amp;&amp; git merge <span class="hljs-string">"<span class="hljs-variable">$current_branch</span>"</span>
+}
+
+<span class="hljs-comment"># Alt + M to trigger</span>
+<span class="hljs-comment"># bind -x '"\em":gcmm'</span>
+
+<span class="hljs-comment"># ----------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># GB: Create a new branch and switch to it | Alt + B</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">gb</span></span>() {
+    <span class="hljs-built_in">read</span> -e -p <span class="hljs-string">"New branch name: "</span> branch &amp;&amp; git checkout -b <span class="hljs-string">"<span class="hljs-variable">$branch</span>"</span>
+}
+<span class="hljs-built_in">bind</span> -x <span class="hljs-string">'"\eb":gb'</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># GCM: Checkout to main branch | Alt + M</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-function"><span class="hljs-title">gcm</span></span>() {
+    git checkout main
+}
+<span class="hljs-built_in">bind</span> -x <span class="hljs-string">'"\em":gcm'</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># NRD: npm run dev | Alt + D</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-built_in">bind</span> -x <span class="hljs-string">'"\ed":npm run dev'</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># VTD: execute script to create vite project w.tailwind/daisyUI</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># GHRC: gh repo create --remote | Alt + R</span>
+<span class="hljs-comment"># ---------------------------------------------------------------------------------</span>
+<span class="hljs-comment"># execute gh repo create &lt;name&gt; --private --source=. --remote=origin --push</span>
+<span class="hljs-function"><span class="hljs-title">ghrc</span></span>() {
+    <span class="hljs-built_in">read</span> -e -p <span class="hljs-string">"Repo Name: "</span> msg &amp;&amp; gh repo create <span class="hljs-string">"<span class="hljs-variable">$msg</span>"</span> --private --<span class="hljs-built_in">source</span>=. --remote=origin --push
+}
+
+<span class="hljs-built_in">bind</span> -x <span class="hljs-string">'"\er":ghrc'</span>
+
+<span class="hljs-comment"># =================================================================================</span>
+<span class="hljs-comment">#       End ALIASES</span>
+<span class="hljs-comment"># =================================================================================</span>
+</div></code></pre>
+  </body>
+</html>
