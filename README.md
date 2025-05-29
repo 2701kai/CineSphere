@@ -91,6 +91,7 @@ A true team effort. Special kudos to:
 - **[@payermann](https://github.com/payermann)** for robust routing magic ✨
 - **[@amir.h.a](https://github.com/Amir-6687)** for architectural insights 🧠
 - All contributors for navigating the ups and downs with grit, wit, and trust.
+- @2701kai - well, he made an effort. As he does. So.. thanx for V.i.S.d.P., i guess.
 
 ---
 
@@ -119,7 +120,7 @@ We not only delivered — we grew as devs and humans.
 
 ## 📚 Read More
 
-Check out the full background story in [`docs/story-of-the-project.md`](./docs/story-of-the-project.md)  
+Check out the full background story in [`docs/story-of-the-project.md`](./doc/story-of-the-project.md)  
 It’s part recap, part satire, all heart.
 
 ---
