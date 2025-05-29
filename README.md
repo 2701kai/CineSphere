@@ -56,6 +56,10 @@ npm run dev
 
 ## 🔐 Login Credentials
 
+#### _more about login:_ **[Login - Page](./doc/login-page/README.md)**
+
+---
+
 Use this dev login to explore the app:
 
 - **Username:** `tmk`
@@ -75,7 +79,7 @@ You'll be redirected to the movies section after login.
 
 ## 📦 Deployment
 
-Live version hosted on [Vercel](https://vercel.com/).  
+Live version hosted on **[Vercel](https://vercel.com/)**.  
 Build triggered from the `main` branch using `vite build`.
 
 ---
@@ -84,8 +88,8 @@ Build triggered from the `main` branch using `vite build`.
 
 A true team effort. Special kudos to:
 
-- @payermann for robust routing magic ✨
-- @amir.h.a for architectural insights 🧠
+- **[@payermann](https://github.com/payermann)** for robust routing magic ✨
+- **[@amir.h.a](https://github.com/Amir-6687)** for architectural insights 🧠
 - All contributors for navigating the ups and downs with grit, wit, and trust.
 
 ---
@@ -96,9 +100,10 @@ A true team effort. Special kudos to:
 
 - [`HOW_WE_STARTED: Felix initial README.md`](./docs/HOW_WE_STARTED.md)
 - [`crossPlatform.md`](./docs/crossPlatform.md)
+- [`story-of-the-project.md`](./docs/story-of-the-project.md)
+- [`Login-Page`](./doc/login-page/README.md)
 - [`final-fix-gspa-deploy.md`](./docs/final-fix-gspa-deploy.md)
 - [`fix-gspa-fork-guide.md`](./docs/fix-gspa-fork-guide.md)
-- [`story-of-the-project.md`](./docs/story-of-the-project.md)
 
 ---
 
@@ -120,3 +125,5 @@ It’s part recap, part satire, all heart.
 ## Like what you see? Be a part of it and prosper with us.
 
 # Join us at [DCI](https://digitalcareerinstitute.org/?dci_friends_promotion_source=survey&dci_friends_promotion_medium=student-satisfaction&dci_friends_promotion_campaign=end-of-course&dci_friends_promotion_content=blank&dci_friends_promotion_term=blank) 🚀!
+
+## [`developer-aliases`](./doc/aliases_for_terminal/developer_aliases.html)
