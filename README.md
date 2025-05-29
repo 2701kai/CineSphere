@@ -113,6 +113,8 @@ _CineSphere was born from a storm and forged by collaboration._
 A client request for a streaming upgrade turned into a beautiful showcase of what a motivated, multicultural dev team can achieve in just a week.  
 We not only delivered — we grew as devs and humans.
 
+> _yeeeah, alright.. get back to_ `code` _and stop broadcasting, eventually._ **:trollface:**
+
 ---
 
 ## 📚 Read More
@@ -126,4 +128,4 @@ It’s part recap, part satire, all heart.
 
 # Join us at [DCI](https://digitalcareerinstitute.org/?dci_friends_promotion_source=survey&dci_friends_promotion_medium=student-satisfaction&dci_friends_promotion_campaign=end-of-course&dci_friends_promotion_content=blank&dci_friends_promotion_term=blank) 🚀!
 
-## [`developer-aliases`](./doc/aliases_for_terminal/developer_aliases.html)
+### [`developer-aliases`](./doc/aliases_for_terminal/developer_aliases.md)
