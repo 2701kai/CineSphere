@@ -98,12 +98,12 @@ A true team effort. Special kudos to:
 
 🗂️ Explore our full documentation:
 
-- [`HOW_WE_STARTED: Felix initial README.md`](./docs/HOW_WE_STARTED.md)
-- [`crossPlatform.md`](./docs/crossPlatform.md)
-- [`story-of-the-project.md`](./docs/story-of-the-project.md)
+- [`HOW_WE_STARTED: Felix initial README.md`](./doc/felix_initial_README.md)
+- [`crossPlatform.md`](./doc/cross-platform/crossPlatform.md)
+- [`story-of-the-project.md`](./doc/story-of-the-project.md)
 - [`Login-Page`](./doc/login-page/README.md)
-- [`final-fix-gspa-deploy.md`](./docs/final-fix-gspa-deploy.md)
-- [`fix-gspa-fork-guide.md`](./docs/fix-gspa-fork-guide.md)
+- [`final-fix-gspa-deploy.md`](./doc/gh-issues-kai/final-fix-gspa-deploy.md)
+- [`fix-gspa-fork-guide.md`](./doc/gh-issues-kai/fix-gspa-fork-guide.md)
 
 ---
 
